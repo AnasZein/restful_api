@@ -24,6 +24,10 @@ const UserSchema = mongoose.Schema({
       return validator.isEmail(data);
     },
   },
+  role: {
+    type: String,
+    default: "user",
+  },
   posts: {
     type: [mongoose.Schema.Types.ObjectId],
     ref: "posts",

@@ -3,7 +3,7 @@ const createToken = require("../utils/createToken");
 
 async function getAllUsers(req, res) {
   try {
-    const users = await UserModel.find({});
+    const users = await UserModel.find().populate("posts");
     if (users) {
       res.status(200).json(users);
     } else {
